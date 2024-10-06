@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.uptask">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.persission.RECEIVE" />
+    <uses-permission android:name="com.google.android.gms.persission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/icono_app"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icono_app"
+        android:supportsRtl="true"
+
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.UpTask"
+
+        tools:targetApi="31">
+        <activity
+            android:name=".activity_editarTarea"
+            android:exported="false" />
+        <activity
+            android:name=".activity_editarPerfil"
+            android:exported="false" />
+        <activity
+            android:name=".activity_perfil"
+            android:exported="false" />
+        <activity
+            android:name=".activity_AgregarTarea"
+            android:exported="false" />
+        <activity
+            android:name=".activity_registro"
+            android:exported="false" />
+        <activity
+            android:name=".activity_olvidoContrasena"
+            android:exported="false" />
+        <activity
+            android:name=".activity_sesionIniciada"
+            android:exported="false" />
+        <activity
+            android:name=".activity_inicioSesion"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+
+        <receiver
+            android:name="com.example.uptask.AlarmReceiver"
+            android:enabled="true" />
+
+        <service
+            android:name="com.example.uptask.NotificationService"
+            android:enabled="true" />
+
+
+    </application>
+
+</manifest>
